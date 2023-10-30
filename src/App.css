@@ -24,12 +24,27 @@ body {
 }
 
 .app-wrapper {
-  margin: 0 auto;
+  margin: 4em auto 0;
   width: 100%;
   max-width: 1000px;
   text-align: center;
   color: var(--grayish-blue);
   background-color: var(--very-pale-blue);
+}
+
+/* Header styles */
+.header-wrapper {
+  margin-bottom: 3em;
+}
+.app-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--dark-desaturated-blue);
+}
+
+.app-banner {
+  /* max-width: ; */
+  max-width: 200px;
 }
 
 /* pricing compoenent */
@@ -44,10 +59,10 @@ body {
   padding: 1.5em;
   width: 95%;
   max-width: 700px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 10px;
   background-color: var(--white);
-  /* box-shadow: 0px 5px 5px 10px #000000; */
+  box-shadow: 0px 5px 40px 1px var(--light-grayish-blue);
 }
 .page-views-desktop-display {
   display: none;
@@ -60,24 +75,22 @@ body {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 36px;
-  width: 36px;
+  height: 42px;
+  width: 42px;
   border-radius: 50%;
   border: none;
   background-color: var(--strong-cyan);
   cursor: pointer;
   margin-top: -15px;
   box-shadow: 1px 15px 20px var(--soft-cyan), 0px 10px 10px var(--soft-cyan);
-  /* background-position: center;
   background: url(../src//images/icon-slider.svg);
-  background-repeat: no-repeat; */
-  /* 
-  background-color: transparent; */
+  background-repeat: no-repeat;
+  background-color: var(--strong-cyan);
+  background-position: center;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
-  /* background-color: #ddd; */
 }
 
 /* input[type="range"] {
@@ -97,6 +110,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 .form-check-input {
+  /* width: 55px;
+  height: 25px; */
   cursor: pointer;
   background-color: var(--light-grayish-blue);
 }
@@ -168,6 +183,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 @media screen and (min-width: 1200px) {
+  .app-title {
+    font-size: 27px;
+  }
   .page-views-mobile-display,
   .pricing-mobile-disaply {
     display: none;
@@ -176,6 +194,10 @@ input[type="range"]::-webkit-slider-runnable-track {
     display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+
+  .pricing-value {
+    font-size: 35px;
   }
 
   .billing-label-yearly::after {
