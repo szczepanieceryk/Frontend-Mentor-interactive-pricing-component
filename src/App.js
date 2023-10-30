@@ -7,7 +7,7 @@ const App = () => {
       <div className="app-wrapper">
         <Header />
         <PricingComponent />
-        <div classNme="attribution">
+        <div className="attribution">
           Challenge by{" "}
           <a href="https://www.frontendmentor.io?ref=challenge">
             Frontend Mentor
