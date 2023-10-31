@@ -1,6 +1,7 @@
-import "./App.css";
 import PricingComponent from "./Components/PricingComponent";
 import Header from "./Layouts/Header";
+import "./styles/App.css";
+
 const App = () => {
   return (
     <div className="container">

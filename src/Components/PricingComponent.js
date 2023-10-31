@@ -1,5 +1,5 @@
 import Form from "react-bootstrap/Form";
-
+import "../styles/PricingComponent.css";
 // - 10K pageviews / $8 per month
 // - 50K pageviews / $12 per month
 // - 100K pageviews / $16 per month
@@ -30,7 +30,9 @@ const PricingComponent = () => {
           label=""
           className="form-check"
         />
-        <span className="billing-label-yearly">Yearly Billing</span>
+        <span className="billing-label billing-label-yearly">
+          Yearly Billing
+        </span>
       </div>
       <div className="spacer-line"></div>
       <div className="bottom-part">

@@ -1,57 +1,10 @@
-:root {
-  /* main colors */
-  --soft-cyan: hsl(174, 77%, 80%);
-  --strong-cyan: hsl(174, 86%, 45%);
-  --light-grayish-red: hsl(14, 92%, 95%);
-  --light-red: hsl(15, 100%, 70%);
-  --pale-blue: hsl(226, 100%, 87%);
-  /* Neutral colors */
-  --white: #fff;
-  --very-pale-blue: hsl(230, 100%, 99%);
-  --light-grayish-blue: hsl(224, 65%, 95%);
-  --light-grayish-blue: hsl(223, 50%, 87%);
-  --grayish-blue: hsl(225, 20%, 60%);
-  --dark-desaturated-blue: hsl(227, 35%, 25%);
-  /* fonts */
-  --font-family: "Manrope", sans-serif;
-}
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-family);
-  background-color: var(--very-pale-blue);
-}
-
-.app-wrapper {
-  margin: 4em auto 0;
-  width: 100%;
-  max-width: 1000px;
-  text-align: center;
-  color: var(--grayish-blue);
-  background-color: var(--very-pale-blue);
-}
-
-/* Header styles */
-.header-wrapper {
-  margin-bottom: 3em;
-}
-.app-title {
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--dark-desaturated-blue);
-}
-
-.app-banner {
-  /* max-width: ; */
-  max-width: 200px;
-}
-
-/* pricing compoenent */
 .pricing-component > *,
-.static-info > * {
+.static-info-el {
   display: block;
-  margin: 1.5em auto;
+  margin: 1.5em auto !important;
+}
+.static-info-el {
+  margin: 0.5em auto !important;
 }
 
 .pricing-component {
@@ -59,10 +12,9 @@ body {
   padding: 1.5em;
   width: 95%;
   max-width: 700px;
-  /* border: 1px solid #ddd; */
   border-radius: 10px;
   background-color: var(--white);
-  box-shadow: 0px 5px 40px 1px var(--light-grayish-blue);
+  box-shadow: 0px 5px 40px 1px var(--empty-slider-bar-blue);
 }
 .page-views-desktop-display {
   display: none;
@@ -74,28 +26,22 @@ body {
 }
 
 input[type="range"]::-webkit-slider-thumb {
+  margin-top: -15px;
   -webkit-appearance: none;
   height: 42px;
   width: 42px;
   border-radius: 50%;
   border: none;
-  background-color: var(--strong-cyan);
   cursor: pointer;
-  margin-top: -15px;
   box-shadow: 1px 15px 20px var(--soft-cyan), 0px 10px 10px var(--soft-cyan);
-  background: url(../src//images/icon-slider.svg);
-  background-repeat: no-repeat;
+  background: url(../images/icon-slider.svg) no-repeat center;
   background-color: var(--strong-cyan);
-  background-position: center;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
+  background-color: var(--empty-slider-bar-blue);
 }
-
-/* input[type="range"] {
-  accent-color: #000;
-} */
 
 .time-billing {
   margin: 0 auto;
@@ -106,14 +52,13 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .form-check {
   margin: 0 1em;
-  /* margin: 0 0.5em; */
 }
 
 .form-check-input {
-  /* width: 55px;
-  height: 25px; */
+  width: 45px !important;
+  height: 25px !important;
   cursor: pointer;
-  background-color: var(--light-grayish-blue);
+  background-color: var(--toogle-bgc-blue);
 }
 
 .form-check-input:checked {
@@ -129,7 +74,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .spacer-line {
   height: 1px;
-  background-color: var(--grayish-blue);
+  background-color: var(--empty-slider-bar-blue);
 }
 .billing-label {
   font-size: 12px;
@@ -146,21 +91,17 @@ input[type="range"]::-webkit-slider-runnable-track {
   border-radius: 25px;
 }
 
-.static-info {
-  padding: 1em 0;
-}
-
 .static-info-el {
   margin: 0.5em 0;
 }
 
 .static-info-el::before {
-  content: url("../src/images/icon-check.svg");
+  content: url("../images/icon-check.svg");
   margin-right: 1em;
 }
 
 .btn-submit {
-  margin: 0 auto;
+  margin: 2em auto 0;
   padding: 0.8em 1.5em;
   color: var(--pale-blue);
   border: none;
@@ -173,19 +114,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 .btn-submit:hover {
   color: var(--white);
 }
-/* attributions */
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
 
 @media screen and (min-width: 1200px) {
-  .app-title {
-    font-size: 27px;
-  }
   .page-views-mobile-display,
   .pricing-mobile-disaply {
     display: none;
@@ -198,6 +128,13 @@ input[type="range"]::-webkit-slider-runnable-track {
 
   .pricing-value {
     font-size: 35px;
+  }
+
+  .billing-label {
+    font-size: 16px;
+  }
+  .time-billing {
+    padding: 1.5em 0 1em;
   }
 
   .billing-label-yearly::after {

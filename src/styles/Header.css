@@ -1,0 +1,18 @@
+/* Header styles */
+.header-wrapper {
+  margin-bottom: 3em;
+}
+.app-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--dark-desaturated-blue);
+}
+
+.app-banner {
+  max-width: 200px;
+}
+@media screen and (min-width: 1200px) {
+  .app-title {
+    font-size: 27px;
+  }
+}
