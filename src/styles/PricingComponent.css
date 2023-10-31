@@ -34,8 +34,7 @@ input[type="range"]::-webkit-slider-thumb {
   border: none;
   cursor: pointer;
   box-shadow: 1px 15px 20px var(--soft-cyan), 0px 10px 10px var(--soft-cyan);
-  background: url(../images/icon-slider.svg) no-repeat center;
-  background-color: var(--strong-cyan);
+  background: url(../images/icon-slider.svg) no-repeat center var(--strong-cyan);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
