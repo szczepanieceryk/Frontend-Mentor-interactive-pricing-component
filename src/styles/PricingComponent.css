@@ -114,7 +114,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   color: var(--white);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 968px) {
   .page-views-mobile-display,
   .pricing-mobile-disaply {
     display: none;
