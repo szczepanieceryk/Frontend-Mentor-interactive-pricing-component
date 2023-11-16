@@ -1,0 +1,152 @@
+@use "./abstracts/colors";
+
+.pricing-component > *,
+.static-info-el {
+  display: block;
+  margin: 1.5em auto !important;
+}
+.static-info-el {
+  margin: 0.5em auto !important;
+}
+
+.pricing-component {
+  margin: 2em auto;
+  padding: 1.5em;
+  width: 95%;
+  max-width: 700px;
+  border-radius: 10px;
+  background-color: colors.$white;
+  box-shadow: 0px 5px 40px 1px colors.$empty-slider-bar-blue;
+
+  input[type="range"]::-webkit-slider-thumb {
+    margin-top: -15px;
+    -webkit-appearance: none;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 15px 20px colors.$soft-cyan, 0px 10px 10px colors.$soft-cyan;
+    background: url(../images/icon-slider.svg) no-repeat center
+      colors.$strong-cyan;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    cursor: pointer;
+    background-color: colors.$empty-slider-bar-blue;
+  }
+
+  .page-views-desktop-display {
+    display: none;
+    .page-views {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+  .pricing-value {
+    color: colors.$dark-desaturated-blue;
+    font-weight: 800;
+    font-size: 30px;
+  }
+  .spacer-line {
+    height: 1px;
+    background-color: colors.$empty-slider-bar-blue;
+  }
+  .time-billing {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    .form-check {
+      margin: 0 1em;
+    }
+
+    .form-check-input {
+      width: 45px !important;
+      height: 25px !important;
+      cursor: pointer;
+      background-color: colors.$toogle-bgc-blue;
+    }
+
+    .form-check-input:checked {
+      background-color: colors.$strong-cyan;
+      border-color: colors.$strong-cyan;
+    }
+    .billing-label {
+      font-size: 12px;
+    }
+    .billing-label-yearly::after {
+      margin-left: 0.5em;
+      padding: 0.3em 0.8em;
+      position: absolute;
+      content: "-25%";
+      font-size: 12px;
+      color: colors.$light-red;
+      vertical-align: baseline;
+      background-color: colors.$light-grayish-red;
+      border-radius: 25px;
+    }
+  }
+  .bottom-part {
+    .static-info-el {
+      margin: 0.5em 0;
+      &::before {
+        content: url("../images/icon-check.svg");
+        margin-right: 1em;
+      }
+    }
+
+    .btn-submit {
+      margin: 2em auto 0;
+      padding: 0.8em 1.5em;
+      color: colors.$pale-blue;
+      border: none;
+      background-color: colors.$dark-desaturated-blue;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        color: colors.$white;
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 968px) {
+//   .page-views-mobile-display,
+//   .pricing-mobile-disaply {
+//     display: none;
+//   }
+//   .page-views-desktop-display {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//   }
+
+//   .pricing-value {
+//     font-size: 35px;
+//   }
+
+//   .billing-label {
+//     font-size: 16px;
+//   }
+//   .time-billing {
+//     padding: 1.5em 0 1em;
+//   }
+
+//   .billing-label-yearly::after {
+//     content: "-25% discount";
+//   }
+//   .bottom-part {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//   }
+//   .static-info {
+//     text-align: left;
+//   }
+//   .btn-submit {
+//     padding: 0.8em 4em;
+//     margin: 0 0 0 12em;
+//   }
+// }

@@ -1,9 +1,12 @@
+@use "./abstracts/colors";
+@use "./abstracts/fonts";
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
-  background-color: var(--very-pale-blue);
+  font-family: fonts.$font-family;
+  background-color: colors.$very-pale-blue;
 }
 
 .app-wrapper {
@@ -11,8 +14,8 @@ body {
   width: 100%;
   max-width: 1000px;
   text-align: center;
-  color: var(--grayish-blue);
-  background-color: var(--very-pale-blue);
+  color: variables.$grayish-blue;
+  background-color: colors.$very-pale-blue;
 }
 
 /* Footer */
@@ -20,7 +23,6 @@ body {
   font-size: 11px;
   text-align: center;
 }
-
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
-}/*# sourceMappingURL=App.css.map */
+  color: hsl(228, 45%, 44%);
+}
