@@ -1,13 +1,5 @@
 @use "./abstracts/colors";
-
-.pricing-component > *,
-.static-info-el {
-  display: block;
-  margin: 1.5em auto !important;
-}
-.static-info-el {
-  margin: 0.5em auto !important;
-}
+@use "./abstracts/brakepoints";
 
 .pricing-component {
   margin: 2em auto;
@@ -17,6 +9,16 @@
   border-radius: 10px;
   background-color: colors.$white;
   box-shadow: 0px 5px 40px 1px colors.$empty-slider-bar-blue;
+
+  & > * {
+    margin: 1.5em auto;
+  }
+  .page-views-mobile-display,
+  .pricing-mobile-disaply {
+    @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+      display: none;
+    }
+  }
 
   input[type="range"]::-webkit-slider-thumb {
     margin-top: -15px;
@@ -38,6 +40,12 @@
 
   .page-views-desktop-display {
     display: none;
+    @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
     .page-views {
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -47,6 +55,9 @@
     color: colors.$dark-desaturated-blue;
     font-weight: 800;
     font-size: 30px;
+    @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+      font-size: 35px;
+    }
   }
   .spacer-line {
     height: 1px;
@@ -57,13 +68,23 @@
     display: flex;
     align-items: center;
     max-width: 300px;
+    @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+      padding: 1.5em 0 1em;
+    }
+    .billing-label {
+      font-size: 12px;
+      @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+        font-size: 16px;
+      }
+    }
+
     .form-check {
       margin: 0 1em;
     }
 
     .form-check-input {
-      width: 45px !important;
-      height: 25px !important;
+      width: 45px;
+      height: 25px;
       cursor: pointer;
       background-color: colors.$toogle-bgc-blue;
     }
@@ -72,27 +93,41 @@
       background-color: colors.$strong-cyan;
       border-color: colors.$strong-cyan;
     }
-    .billing-label {
-      font-size: 12px;
-    }
-    .billing-label-yearly::after {
-      margin-left: 0.5em;
-      padding: 0.3em 0.8em;
-      position: absolute;
-      content: "-25%";
-      font-size: 12px;
-      color: colors.$light-red;
-      vertical-align: baseline;
-      background-color: colors.$light-grayish-red;
-      border-radius: 25px;
+
+    .billing-label-yearly {
+      &::after {
+        margin-left: 0.5em;
+        padding: 0.3em 0.8em;
+        position: absolute;
+        content: "-25%";
+        font-size: 12px;
+        color: colors.$light-red;
+        vertical-align: baseline;
+        background-color: colors.$light-grayish-red;
+        border-radius: 25px;
+        @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+          content: "-25% discount";
+        }
+      }
     }
   }
   .bottom-part {
-    .static-info-el {
-      margin: 0.5em 0;
-      &::before {
-        content: url("../images/icon-check.svg");
-        margin-right: 1em;
+    @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .static-info {
+      @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+        text-align: left;
+      }
+      .static-info-el {
+        display: block;
+        margin: 0.5em 0;
+        &::before {
+          content: url("../images/icon-check.svg");
+          margin-right: 1em;
+        }
       }
     }
 
@@ -105,48 +140,14 @@
       border-radius: 25px;
       cursor: pointer;
       transition: 0.5s;
+      @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+        padding: 0.8em 4em;
+        margin: 0 0 0 12em;
+      }
+
       &:hover {
         color: colors.$white;
       }
     }
   }
 }
-
-// @media screen and (min-width: 968px) {
-//   .page-views-mobile-display,
-//   .pricing-mobile-disaply {
-//     display: none;
-//   }
-//   .page-views-desktop-display {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-around;
-//   }
-
-//   .pricing-value {
-//     font-size: 35px;
-//   }
-
-//   .billing-label {
-//     font-size: 16px;
-//   }
-//   .time-billing {
-//     padding: 1.5em 0 1em;
-//   }
-
-//   .billing-label-yearly::after {
-//     content: "-25% discount";
-//   }
-//   .bottom-part {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//   }
-//   .static-info {
-//     text-align: left;
-//   }
-//   .btn-submit {
-//     padding: 0.8em 4em;
-//     margin: 0 0 0 12em;
-//   }
-// }

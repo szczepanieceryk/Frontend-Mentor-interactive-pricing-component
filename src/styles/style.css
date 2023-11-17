@@ -1,9 +1,6 @@
 /* main colors */
 /* Neutral colors */
 /* fonts */
-/* main colors */
-/* Neutral colors */
-/* fonts */
 body {
   margin: 0;
   padding: 0;
@@ -33,42 +30,32 @@ body {
 
 /* main colors */
 /* Neutral colors */
-/* fonts */
 /* Header styles */
 .header-wrapper {
   padding-bottom: 4em;
   background: url("../images/pattern-circles.svg") no-repeat center;
+}
+@media screen and (min-width: 992px) {
+  .header-wrapper {
+    padding-bottom: 6em;
+  }
 }
 .header-wrapper .app-title {
   font-size: 25px;
   font-weight: bold;
   color: hsl(227deg, 35%, 25%);
 }
+@media screen and (min-width: 992px) {
+  .header-wrapper .app-title {
+    font-size: 27px;
+  }
+}
 .header-wrapper .app-banner {
   max-width: 200px;
 }
 
-@media screen and (min-width: 968px) {
-  .header-wrapper {
-    padding-bottom: 6em;
-  }
-  .app-title {
-    font-size: 27px;
-  }
-}
 /* main colors */
 /* Neutral colors */
-/* fonts */
-.pricing-component > *,
-.static-info-el {
-  display: block;
-  margin: 1.5em auto !important;
-}
-
-.static-info-el {
-  margin: 0.5em auto !important;
-}
-
 .pricing-component {
   margin: 2em auto;
   padding: 1.5em;
@@ -77,6 +64,15 @@ body {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 5px 40px 1px hsl(224deg, 65%, 95%);
+}
+.pricing-component > * {
+  margin: 1.5em auto;
+}
+@media screen and (min-width: 992px) {
+  .pricing-component .page-views-mobile-display,
+.pricing-component .pricing-mobile-disaply {
+    display: none;
+  }
 }
 .pricing-component input[type=range]::-webkit-slider-thumb {
   margin-top: -15px;
@@ -96,6 +92,13 @@ body {
 .pricing-component .page-views-desktop-display {
   display: none;
 }
+@media screen and (min-width: 992px) {
+  .pricing-component .page-views-desktop-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
 .pricing-component .page-views-desktop-display .page-views {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -104,6 +107,11 @@ body {
   color: hsl(227deg, 35%, 25%);
   font-weight: 800;
   font-size: 30px;
+}
+@media screen and (min-width: 992px) {
+  .pricing-component .pricing-value {
+    font-size: 35px;
+  }
 }
 .pricing-component .spacer-line {
   height: 1px;
@@ -115,21 +123,31 @@ body {
   align-items: center;
   max-width: 300px;
 }
+@media screen and (min-width: 992px) {
+  .pricing-component .time-billing {
+    padding: 1.5em 0 1em;
+  }
+}
+.pricing-component .time-billing .billing-label {
+  font-size: 12px;
+}
+@media screen and (min-width: 992px) {
+  .pricing-component .time-billing .billing-label {
+    font-size: 16px;
+  }
+}
 .pricing-component .time-billing .form-check {
   margin: 0 1em;
 }
 .pricing-component .time-billing .form-check-input {
-  width: 45px !important;
-  height: 25px !important;
+  width: 45px;
+  height: 25px;
   cursor: pointer;
   background-color: hsl(223deg, 50%, 87%);
 }
 .pricing-component .time-billing .form-check-input:checked {
   background-color: hsl(174deg, 86%, 45%);
   border-color: hsl(174deg, 86%, 45%);
-}
-.pricing-component .time-billing .billing-label {
-  font-size: 12px;
 }
 .pricing-component .time-billing .billing-label-yearly::after {
   margin-left: 0.5em;
@@ -142,10 +160,28 @@ body {
   background-color: hsl(14deg, 92%, 95%);
   border-radius: 25px;
 }
-.pricing-component .bottom-part .static-info-el {
+@media screen and (min-width: 992px) {
+  .pricing-component .time-billing .billing-label-yearly::after {
+    content: "-25% discount";
+  }
+}
+@media screen and (min-width: 992px) {
+  .pricing-component .bottom-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .pricing-component .bottom-part .static-info {
+    text-align: left;
+  }
+}
+.pricing-component .bottom-part .static-info .static-info-el {
+  display: block;
   margin: 0.5em 0;
 }
-.pricing-component .bottom-part .static-info-el::before {
+.pricing-component .bottom-part .static-info .static-info-el::before {
   content: url("../images/icon-check.svg");
   margin-right: 1em;
 }
@@ -159,42 +195,12 @@ body {
   cursor: pointer;
   transition: 0.5s;
 }
-.pricing-component .bottom-part .btn-submit:hover {
-  color: #fff;
-}
-
-@media screen and (min-width: 968px) {
-  .page-views-mobile-display,
-.pricing-mobile-disaply {
-    display: none;
-  }
-  .page-views-desktop-display {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .pricing-value {
-    font-size: 35px;
-  }
-  .billing-label {
-    font-size: 16px;
-  }
-  .time-billing {
-    padding: 1.5em 0 1em;
-  }
-  .billing-label-yearly::after {
-    content: "-25% discount";
-  }
-  .bottom-part {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .static-info {
-    text-align: left;
-  }
-  .btn-submit {
+@media screen and (min-width: 992px) {
+  .pricing-component .bottom-part .btn-submit {
     padding: 0.8em 4em;
     margin: 0 0 0 12em;
   }
+}
+.pricing-component .bottom-part .btn-submit:hover {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

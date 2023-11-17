@@ -1,23 +1,23 @@
 @use "./abstracts/colors";
+@use "./abstracts/brakepoints";
+
 /* Header styles */
 .header-wrapper {
   padding-bottom: 4em;
   background: url("../images/pattern-circles.svg") no-repeat center;
+  @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+    padding-bottom: 6em;
+  }
+
   .app-title {
     font-size: 25px;
     font-weight: bold;
     color: colors.$dark-desaturated-blue;
+    @media screen and (min-width: brakepoints.$brakepoint-desktop) {
+      font-size: 27px;
+    }
   }
   .app-banner {
     max-width: 200px;
-  }
-}
-
-@media screen and (min-width: 968px) {
-  .header-wrapper {
-    padding-bottom: 6em;
-  }
-  .app-title {
-    font-size: 27px;
   }
 }
