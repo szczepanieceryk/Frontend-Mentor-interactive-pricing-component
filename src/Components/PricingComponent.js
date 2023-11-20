@@ -1,19 +1,47 @@
 import Form from "react-bootstrap/Form";
-import "../styles/PricingComponent.css";
+import "../styles/_pricingComponent.scss";
 
-const PricingComponent = () => {
+const PricingComponent = ({
+  views,
+  pageViews,
+  setViews,
+  price,
+  setPrice,
+  pricing,
+}) => {
+  const handleChange = (event) => {
+    let value = parseInt(event.target.value, 10);
+    let index = value / 25;
+
+    if (index >= 0 && index < pricing.length) {
+      setViews(pageViews[index]);
+      setPrice(pricing[index]);
+    }
+  };
+
   return (
     <Form className="pricing-component">
-      <span className="page-views-mobile-display">100k pageviews</span>
+      <span className="page-views-mobile-display">
+        {views === "1" ? views + "M" : views + "K"} pageviews
+      </span>
       <div className="page-views-desktop-display">
-        <span className="page-views">100k pageviews</span>
+        <Form.Label className="page-views">
+          {views === "1" ? views + "M" : views + "K"} pageviews
+        </Form.Label>
         <span className="pricing-disaply">
-          <span className="pricing-value"> $ 16.00 </span>/ month
+          <span className="pricing-value"> $ {price}.00 </span>/ month
         </span>
       </div>
-      <Form.Range className="range-slider-input" />
+      <Form.Range
+        className="range-slider-input"
+        min={0}
+        max={100}
+        value={pricing.indexOf(price) * 25}
+        step={25}
+        onChange={handleChange}
+      />
       <span className="pricing-mobile-disaply">
-        <span className="pricing-value"> $ 16.00 </span>/ month
+        <span className="pricing-value"> $ {price}.00 </span>/ month
       </span>
       <div className="time-billing">
         <span className="billing-label">Monthly Billing</span>
