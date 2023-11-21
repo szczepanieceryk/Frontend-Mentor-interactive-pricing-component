@@ -8,14 +8,37 @@ const PricingComponent = ({
   price,
   setPrice,
   pricing,
+  discountPricing,
+  isYearsubScription,
+  setIsYearSubscription,
+  sliderIndex,
+  setSliderIndex,
 }) => {
-  const handleChange = (event) => {
+  // display appropriate pricing & page view values based on slider position
+  const handleSliderChange = (event) => {
     let value = parseInt(event.target.value, 10);
     let index = value / 25;
 
     if (index >= 0 && index < pricing.length) {
+      setSliderIndex(index);
       setViews(pageViews[index]);
-      setPrice(pricing[index]);
+      setPrice(isYearsubScription ? discountPricing[index] : pricing[index]);
+    }
+  };
+
+  const handleCheckInputChange = () => {
+    // get the currend index (based on displayed paged views)
+    const currentIndex = pageViews.indexOf(views);
+    // assign to variables value & update toggled state
+    const newIsYearSubscription = !isYearsubScription;
+
+    setIsYearSubscription(newIsYearSubscription);
+
+    // based on state value determine which pricing to use (standard / discounted)
+    if (newIsYearSubscription) {
+      setPrice(discountPricing[currentIndex]);
+    } else {
+      setPrice(pricing[currentIndex]);
     }
   };
 
@@ -36,9 +59,9 @@ const PricingComponent = ({
         className="range-slider-input"
         min={0}
         max={100}
-        value={pricing.indexOf(price) * 25}
+        value={sliderIndex * 25}
         step={25}
-        onChange={handleChange}
+        onChange={handleSliderChange}
       />
       <span className="pricing-mobile-disaply">
         <span className="pricing-value"> $ {price}.00 </span>/ month
@@ -50,6 +73,7 @@ const PricingComponent = ({
           id="custom-switch"
           label=""
           className="form-check"
+          onChange={handleCheckInputChange}
         />
         <span className="billing-label billing-label-yearly">
           Yearly Billing
