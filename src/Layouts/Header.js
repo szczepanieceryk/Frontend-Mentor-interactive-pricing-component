@@ -1,11 +1,9 @@
 import "../styles/_header.scss";
-const Header = () => {
+const Header = ({ title, banner }) => {
   return (
     <div className="header-wrapper">
-      <h1 className="app-title">Simple, traffic-based pricing</h1>
-      <span className="app-banner">
-        Sign-up for our 30-day trial. No credit card required.
-      </span>
+      <h1 className="app-title">{title}</h1>
+      <span className="app-banner">{banner}</span>
     </div>
   );
 };

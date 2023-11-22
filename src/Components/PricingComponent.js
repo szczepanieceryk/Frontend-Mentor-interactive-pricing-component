@@ -3,45 +3,12 @@ import "../styles/_pricingComponent.scss";
 
 const PricingComponent = ({
   views,
-  pageViews,
-  setViews,
   price,
-  setPrice,
-  pricing,
-  discountPricing,
-  isYearsubScription,
-  setIsYearSubscription,
   sliderIndex,
-  setSliderIndex,
+  handleSliderChange,
+  handleCheckInputChange,
+  handleFormSubmit,
 }) => {
-  // display appropriate pricing & page view values based on slider position
-  const handleSliderChange = (event) => {
-    let value = parseInt(event.target.value, 10);
-    let index = value / 25;
-
-    if (index >= 0 && index < pricing.length) {
-      setSliderIndex(index);
-      setViews(pageViews[index]);
-      setPrice(isYearsubScription ? discountPricing[index] : pricing[index]);
-    }
-  };
-
-  const handleCheckInputChange = () => {
-    // get the currend index (based on displayed paged views)
-    const currentIndex = pageViews.indexOf(views);
-    // assign to variables value & update toggled state
-    const newIsYearSubscription = !isYearsubScription;
-
-    setIsYearSubscription(newIsYearSubscription);
-
-    // based on state value determine which pricing to use (standard / discounted)
-    if (newIsYearSubscription) {
-      setPrice(discountPricing[currentIndex]);
-    } else {
-      setPrice(pricing[currentIndex]);
-    }
-  };
-
   return (
     <Form className="pricing-component">
       <span className="page-views-mobile-display">
@@ -86,7 +53,7 @@ const PricingComponent = ({
           <span className="static-info-el">100% data ownership</span>
           <span className="static-info-el">Email reports</span>
         </div>
-        <button type="submit" className="btn-submit">
+        <button onClick={handleFormSubmit} type="submit" className="btn-submit">
           Start my trial
         </button>
       </div>
