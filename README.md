@@ -42,8 +42,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com](https://www.frontendmentor.io/solutions/interactive-pricing-component-using-react-and-scss-styles-TheEi9DDzw)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com](https://szczepanieceryk.github.io/Frontend-Mentor-interactive-pricing-component/)
+- Solution URL: [Add solution URL here](https://your-solution-url.com](https://www.frontendmentor.io/solutions/interactive-pricing-component-using-react-and-scss-styles-TheEi9DDzw))
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com](https://szczepanieceryk.github.io/Frontend-Mentor-interactive-pricing-component/))
 
 ## My process
 
