@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.96bd9d37.css",
-    "main.js": "/static/js/main.595f8181.js",
-    "index.html": "/index.html",
-    "static/media/icon-slider.svg": "/static/media/icon-slider.cbca35e0d11c560ba351.svg",
-    "static/media/pattern-circles.svg": "/static/media/pattern-circles.9f6ed14bb3b0084b05a9.svg",
-    "static/media/icon-check.svg": "/static/media/icon-check.83c38a48815855ecc2d7.svg",
-    "main.96bd9d37.css.map": "/static/css/main.96bd9d37.css.map",
-    "main.595f8181.js.map": "/static/js/main.595f8181.js.map"
+    "main.css": "/Frontend-Mentor-interactive-pricing-component/static/css/main.d5bc9e48.css",
+    "main.js": "/Frontend-Mentor-interactive-pricing-component/static/js/main.595f8181.js",
+    "index.html": "/Frontend-Mentor-interactive-pricing-component/index.html",
+    "static/media/icon-slider.svg": "/Frontend-Mentor-interactive-pricing-component/static/media/icon-slider.cbca35e0d11c560ba351.svg",
+    "static/media/pattern-circles.svg": "/Frontend-Mentor-interactive-pricing-component/static/media/pattern-circles.9f6ed14bb3b0084b05a9.svg",
+    "static/media/icon-check.svg": "/Frontend-Mentor-interactive-pricing-component/static/media/icon-check.83c38a48815855ecc2d7.svg",
+    "main.d5bc9e48.css.map": "/Frontend-Mentor-interactive-pricing-component/static/css/main.d5bc9e48.css.map",
+    "main.595f8181.js.map": "/Frontend-Mentor-interactive-pricing-component/static/js/main.595f8181.js.map"
   },
   "entrypoints": [
-    "static/css/main.96bd9d37.css",
+    "static/css/main.d5bc9e48.css",
     "static/js/main.595f8181.js"
   ]
 }
