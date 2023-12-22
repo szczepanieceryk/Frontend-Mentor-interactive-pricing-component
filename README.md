@@ -6,4 +6,4 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 
 ## Links
 
-- Live Site URL: [Add live site URL here](https://szczepanieceryk.github.io/Frontend-Mentor-interactive-pricing-component/)
+- [Live Site URL](https://szczepanieceryk.github.io/Frontend-Mentor-interactive-pricing-component/)
